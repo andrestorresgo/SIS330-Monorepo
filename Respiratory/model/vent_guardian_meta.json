@@ -1,0 +1,14 @@
+{
+  "threshold": 0.5199999999999998,
+  "input_shape": [
+    1,
+    100
+  ],
+  "classes": {
+    "0": "Safe",
+    "1": "Crisis"
+  },
+  "crisis_precision": 0.8903624099691323,
+  "crisis_recall": 0.8123500573693543,
+  "crisis_f1": 0.8495691065779426
+}

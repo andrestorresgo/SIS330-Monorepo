@@ -1,0 +1,15 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Data files (raw and processed telemetry CSVs)
+*.csv
+
+# Visualizations and reports
+*.png
+*.jpg
+*.jpeg
+*.pdf

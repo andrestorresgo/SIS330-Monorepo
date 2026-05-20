@@ -1,0 +1,45 @@
+services:
+  hemo-dataset:
+    build: ./Hemo/dataset
+    volumes:
+      - ./Hemo/dataset/output:/app/output
+      - ./Hemo/dataset/raw_files:/app/raw_files
+      - ./Hemo/dataset/labeled_files:/app/labeled_files
+      - ./Hemo/dataset/chunks:/app/chunks
+    networks:
+      - pipeline
+
+  vent-dataset:
+    build: ./Respiratory/dataset
+    volumes:
+      - ./Respiratory/dataset/output:/app/output
+      - ./Respiratory/dataset/raw_files:/app/raw_files
+      - ./Respiratory/dataset/labeled_files:/app/labeled_files
+      - ./Respiratory/dataset/chunks:/app/chunks
+    networks:
+      - pipeline
+
+  go-broadcaster:
+    build: ./Broadcaster
+    volumes:
+      - ./DataExtraction/production_sim_data.csv:/app/production_sim_data.csv:ro
+    networks:
+      - pipeline
+    restart: unless-stopped
+
+  orchestrator:
+    build: ./orchestrator
+    ports:
+      - "3000:3000"
+    environment:
+      - GO_WS_HOST=go-broadcaster
+      - GO_WS_PORT=8080
+    depends_on:
+      - go-broadcaster
+    networks:
+      - pipeline
+    restart: unless-stopped
+
+networks:
+  pipeline:
+    driver: bridge

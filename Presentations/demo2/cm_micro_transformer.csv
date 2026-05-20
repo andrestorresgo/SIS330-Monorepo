@@ -1,0 +1,10 @@
+,Predicted Safe,Predicted Crash
+Actual Safe,791,9
+Actual Crash,0,200
+
+Metric,Value
+Accuracy,99.10%
+Precision,95.69%
+Recall (Sensitivity),100.00%
+F1 Score,97.80%
+False Positive Rate,1.12%

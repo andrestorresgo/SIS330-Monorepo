@@ -1,0 +1,8 @@
+services:
+  go-broadcaster:
+    build: ./Broadcaster
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./DataExtraction/production_sim_data.csv:/app/production_sim_data.csv:ro
+    restart: unless-stopped

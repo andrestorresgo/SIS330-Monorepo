@@ -1,0 +1,6 @@
+services:
+  demo-pipeline:
+    build: .
+    volumes:
+      - ./:/app
+    command: bash -c "python -u 01_extract_demo_cases.py && python -u 02_clean_and_chunk.py"

@@ -1,0 +1,19 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large generated / downloaded dataset directories
+dataset/chunks/
+dataset/labeled_files/
+dataset/raw_files/
+dataset/output/
+
+# Extra safety rules for data exports
+*.npy
+*.zip
+*.csv
+*.png
