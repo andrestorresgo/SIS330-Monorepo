@@ -91,3 +91,6 @@ go.work.sum
 
 # Private stuff
 Times/
+prompts/
+Presentations/
+*.csv

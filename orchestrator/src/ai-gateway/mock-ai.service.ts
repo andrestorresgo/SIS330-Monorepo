@@ -22,7 +22,7 @@ export class MockAiService {
     };
 
     this.logger.log(
-      `🤖 Mock prediction: risk=${prediction.hypotension_risk}, state=${prediction.state}`,
+      `🤖 Prediction: risk=${prediction.hypotension_risk}, state=${prediction.state}`,
     );
 
     return prediction;

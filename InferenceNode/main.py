@@ -60,11 +60,11 @@ async def load_models():
         MODELS["transformer"] = MicroTransformer()
 
         # Load weights
-        MODELS["hemo"].load_state_dict(torch.load("hemo_demo.pth", map_location=torch.device('cpu')))
-        MODELS["vent"].load_state_dict(torch.load("vent_demo.pth", map_location=torch.device('cpu')))
-        MODELS["transformer"].load_state_dict(torch.load("transformer_demo.pth", map_location=torch.device('cpu')))
+        MODELS["hemo"].load_state_dict(torch.load("hemo_demo.pth", map_location=torch.device('gpu')))
+        MODELS["vent"].load_state_dict(torch.load("vent_demo.pth", map_location=torch.device('gpu')))
+        MODELS["transformer"].load_state_dict(torch.load("transformer_demo.pth", map_location=torch.device('gpu')))
 
-        # Set to evaluation mode (CRÍTICO)
+        # Set to evaluation mode
         for model in MODELS.values():
             model.eval()
         

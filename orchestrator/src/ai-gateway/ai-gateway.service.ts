@@ -23,9 +23,7 @@ export class AiGatewayService {
     if (this.mlEndpoint) {
       this.logger.log(`ML endpoint configured: ${this.mlEndpoint}`);
     } else {
-      this.logger.warn(
-        'No ML_ENDPOINT set — using MockAiService for predictions',
-      );
+      this.logger.warn('No ML_ENDPOINT set — using AiService for predictions');
     }
   }
 
